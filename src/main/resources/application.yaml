@@ -1,0 +1,29 @@
+#spring:
+# data:
+#    mongodb:
+#      uri: mongodb+srv://admin:<pass>@cluster0.ilfjyyf.mongodb.net/?retryWrites=true&w=majority
+#      database: User
+#      
+
+spring:
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/mydatabase
+  security:
+    jwt:
+      secret: "@Uday#k1"
+      expiration: 86400 # Token expiration time (in seconds), e.g., 24 hours
+
+# Custom properties for password encryption strength
+custom:
+  security:
+    password:
+      strength: 10 # Strength of password encryption (e.g., 10 for bcrypt)
+
+# Custom properties for MongoDB connection pool settings
+  data:
+    mongodb:
+      connection:
+        min-connections: 2
+        max-connections: 10
+        idle-timeout: 30000 # Connection idle timeout in milliseconds
